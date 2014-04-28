@@ -1,4 +1,4 @@
-/*!
+/*
 * Global less v1.0.0 
 */
 
@@ -10,88 +10,270 @@
 
 /* ========================================================================
 * Global color variables
-* ======================================================================== */
-
-
-/* ========================================================================
-* Height Properties
-* Default class is .h-(percentage of the height)
-* example .h-25 mean height is 25% and the output is height : 25%
-* ======================================================================== */
-
-.h-25p {
- height: 25%;
-}
-.h-50p {
- height: 50%;
-}
-.h-75p {
- height: 75%;
-}
-.h-100p {
- height: 100%;
-}
-
-/* Height with !important property */
-
-.h-25p-i {
- height: 25% @imp;
-}
-.h-50p-i {
- height: 50% @imp;
-}
-.h-75p-i {
- height: 75% @imp;
-}
-.h-100p-i {
- height: 100% @imp;
-}
-
-/* ========================================================================
-* Width Properties
-* Default class is .w-(percentage of the height)
-* example .w-25 mean height is 25% and the output is height : 25%
-* ======================================================================== */
-
-.w-25p {
- width: 25%;
-}
-.w-50p {
- width: 50%;
-}
-.w-75p {
- width: 75%;
-}
-.w-100p {
- width: 100%;
-}
-
-/* Width with !important property */
-
-.w-25p-i {
- width: 25% @imp;
-}
-.w-50p-i {
- width: 50% @imp;
-}
-.w-75p-i {
- width: 75% @imp;
-}
-.w-100p-i {
- width: 100% @imp;
-}
-
-
-/* ========================================================================
-* Padding
-* default class is .pad-(padding position)-(padding-value (in px) / (percentage)) 
 *
-* padding position properties :  l : left, r : right, t : top, b : bottom
+* Color palettes is adapted from flatuicolors
+* visit http://flatuicolors.com to see the color palettes look like
+* ======================================================================== */
+
+@turquoise : #1abc9c;
+@emerald : #2ecc71;
+@peter-river : #3498db;
+@amethyst : #9b59b6;
+@wet-ashpalt : #34495e;
+@green-sea : #16a085;
+@nephritis : #27ae60;
+@belize-hole : #2980b9;
+@wisteria : #8e44ad;
+@midnight-blue : #2c3e50;
+@sun-flower : #f1c40f;
+@carrot : #f1c40f;
+@alizarin : #e74c3c;
+@clouds : #ecf0f1;
+@concrete : #95a5a6;
+@orange : #f39c12;
+@pumpkin : #d35400;
+@pomegranate : #c0392b;
+@silver : #bdc3c7;
+@asbestos : #7f8c8d;
+
+/* Default color */
+
+
+
+/* ========================================================================
+* HEIGHT
 *
-* Example : .pad-l-25 will produce padding-left : 25px
+* Default class is .h-(values of the height (in px) / (percentage))
+* example .h-(25px) mean height is 25px and the output is height : 25px
+* ======================================================================== */
+
+.h-(@val) {
+ height: @val;
+}
+
+/* Width with '!important' property 
+*  Add '.imp-' before 'h' 
+*/
+
+.imp-h-(@val) {
+ height: @val @imp;
+}
+
+/* ========================================================================
+* WIDTH
+*
+* Default class is .w-(values of the width (in px) / (percentage))
+* example .w-(25px) mean width is 25px and the output is width : 25px
+* ======================================================================== */
+
+.w-(@val) {
+ width: @val;
+}
+
+/* Width with '!important' property 
+*  Add '.imp-' before 'w' 
+*/
+
+.imp-w-(@val) {
+ width: @val @imp;
+}
+
+
+/* ========================================================================
+* PADDING
+*
+* default class is .pad-[padding position]-(padding-value (in px) / (percentage)) 
+*
+* padding position properties :  
+* l : left, r : right, t : top, b : bottom , (none) : padding all 
+*
+* Example : '.pad-l-(25px)'' will produce 'padding-left : 25px'
 * 
-* Percentage values : 
-* Add "p" after the number 
-* Example : .pad-l-25p will produce padding-left : 25%
 * ======================================================================== */
 
+.pad-(@val) {
+	padding : @val;
+}
+.pad-l-(@val) {
+	padding-left : @val;
+}
+.pad-r-(@val) {
+	padding-right : (@val);
+}
+.pad-t-(@val) {
+	padding-top : (@val);
+}
+.pad-b-(@val) {
+	padding-bottom : (@val);
+}
+
+/* Padding with '!important' properties 
+*  Add '.imp-' before 'pad' 
+*/
+
+.imp-pad-(@val) {
+	padding : @val @imp;
+}
+.imp-pad-l-(@val) {
+	padding-left : @val @imp;
+}
+.imp-pad-r-(@val) {
+	padding-right : (@val) @imp;
+}
+.imp-pad-t-(@val) {
+	padding-top : (@val) @imp;
+}
+.imp-pad-b-(@val) {
+	padding-bottom : (@val) @imp;
+}
+
+/* ========================================================================
+* MARGIN
+*
+* default class is .mar-[margin position]-(margin-value (in px) / (percentage)) 
+*
+* margin position properties :  
+* l : left, r : right, t : top, b : bottom , (none) : margin all 
+*
+* Example : '.mar-l-(25px)' will produce 'margin-left : 25px'
+* 
+* Note if you want to generate 'margin: (value) auto' use '.mar-auto-(value)'
+* ======================================================================== */
+
+.mar-auto-(@val) {
+	margin: @val auto;
+}
+.mar-(@val) {
+	margin : @val;
+}
+.mar-l-(@val) {
+	margin-left : @val;
+}
+.mar-r-(@val) {
+	margin-right : (@val);
+}
+.mar-t-(@val) {
+	margin-top : (@val);
+}
+.mar-b-(@val) {
+	margin-bottom : (@val);
+}
+
+/* Margin with '!important' properties 
+*  Add '.imp-' before 'mar' 
+*/
+
+.imp-mar-auto-(@val) {
+	margin: @val auto @imp;
+}
+.imp-mar-(@val) {
+	margin : @val @imp;
+}
+.imp-mar-l-(@val) {
+	margin-left : @val @imp;
+}
+.imp-mar-r-(@val) {
+	margin-right : (@val) @imp;
+}
+.imp-mar-t-(@val) {
+	margin-top : (@val) @imp;
+}
+.imp-mar-b-(@val) {
+	margin-bottom : (@val) @imp;
+}
+
+/* ========================================================================
+* OVERFLOW
+*
+* default class is .overflow-(property) 
+* property : auto, hidden, inherit, scroll, visible
+* Example : '.overflow-(hidden)' will produce 'overflow: hidden'
+* ======================================================================== */
+
+.overflow-(@prop) {
+	overflow: @prop;
+}
+
+/* overflow with '!important' properties 
+*  Add '.imp-' before 'overflow' 
+*/
+
+.imp-overflow-(@prop) {
+	overflow: @prop @imp;
+}
+
+/* ========================================================================
+* FLOAT
+*
+* default class is .float-(property) 
+* property : left, right
+* Example : '.float-(left)' will produce 'float: left'
+* ======================================================================== */
+
+.float-(@prop) {
+	float: @prop;
+}
+
+/* overflow with '!important' properties 
+*  Add '.imp-' before 'overflow' 
+*/
+
+.imp-float-(@prop) {
+	float: @prop @imp;
+}
+
+/* ========================================================================
+* FONT
+*
+* font-size : default class is .fontsize-(value) 
+* Example : '.font-s-(14px)' will produce 'font-size: 14px'
+*
+* font-variant : default class is .fontvar-(property) 
+* property : inherit, normal, small-caps
+* Example : '.fontvar-(normal)' will produce 'font-variant: normal'
+*
+* font-style : default class is .fontstyle-(property) 
+* property : inherit, italic, normal, oblique
+* Example : '.fontstyle-(inherit)' will produce 'font-style: inherit'
+*
+* font-weight : default class is .fontweight-(value) 
+* Example : '.fontweight-(300)' will produce 'font-weight: 300'
+*
+* ======================================================================== */
+
+.fontsize-(@val) {
+	font-size: @val;
+}
+
+.fontvar-(@prop) {
+	font-variant: @prop;
+}
+
+.fontstyle-(@prop) {
+	font-style: @prop;
+}
+
+.fontweight-(@val) {
+	font-weight: @val;
+}
+
+
+/* font with '!important' properties 
+*  Add '.imp-' before 'fontsize','fontvar','fontstyle','fontweight' 
+*/
+
+.imp-fontsize-(@val) {
+	font-size: @val @imp;
+}
+
+.imp-fontvar-(@prop) {
+	font-variant: @prop @imp;
+}
+
+.imp-fontstyle-(@prop) {
+	font-style: @prop @imp;
+}
+
+.imp-fontweight-(@val) {
+	font-weight: @val @imp;
+}
